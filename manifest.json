@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "Ex Musica",
+  "version": "1.0",
+  "description": "Gets Spotify data to add to Wikidata",
+  "icons": {
+    "48": "icons/Wikidata-music-logo-en.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.wikidata.org/wiki/Q*"
+      ],
+      "js": [
+        "jquery-3.6.0.min.js",
+        "main.js"
+      ]
+    }
+  ],
+  "browser_action": {
+    "default_icon": {
+      "16": "icons/Wikidata-music-logo-en.png"
+    },
+    "default_title": "Ex Musica"
+  },
+  "background": {
+    "scripts": [
+      "jquery-3.6.0.min.js",
+      "background.js"
+    ]
+  },
+  "permissions": [
+    "identity",
+    "storage",
+    "https://api.spotify.com/v1/*"
+  ]
+}
